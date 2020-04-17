@@ -4,7 +4,9 @@
  */
 
 setState({
-  todos: [ ],
+  todos: [
+    // {todo:  todo, completed: false}
+  ],
 });
 
 /**
@@ -47,7 +49,7 @@ const TodoComponent = () => {
  * You can use the above example simply copy the function call 
  * [.point()] method will take the [ id | classname | or any other attribute  ]
  */
-
+// view(TodoComponent).point("#todo-wrapper").named("todo-list-view").render();
 
 /* USE CASE TWO
  * call the view function to render the view initally
@@ -101,7 +103,8 @@ add_todo_button.addEventListener('click', event => {
   var  state = getState();
 
   // affter geting our application state we push a new item to the todos
-  state.todos = [...state.todos, {todo:  todo, completed: false}]
+  // state.todos = [...state.todos, {todo:  todo, completed: false}]
+  state.todos.push({todo:  todo, completed: false})
 
   //affter pushing a new item we call setState(state) method in order to update the state  
   setState(state);

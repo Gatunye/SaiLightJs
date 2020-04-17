@@ -42,7 +42,7 @@ const VIEW_STORE = {
  * @example
  *  view(() => {
  *     return `<div>some html element here</div>`
- * }).point('#todo-wrapper')
+ * }).point('#todo-wrapper').render()
  */
 function view(component) {
   var _ref; // variable to hold dom referencing element
@@ -118,7 +118,7 @@ function render() {
  *  Get the current application state
  */
 function getState() {
-  const _state = { ...STORE.state };
+  const _state = { ...STORE.state }; // Object.create({}, STORE.state)
   return _state;
 }
 
