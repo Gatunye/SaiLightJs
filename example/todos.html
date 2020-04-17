@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--Import the light js kit before anything in your application-->
+    <script src="./sai-light.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+            font-weight: 300;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .todo-wrapper,
+        .add-todo-wrapper {
+            width: 70%;
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 100px;
+            padding: 30px;
+            background-color: rgb(227, 230, 229);
+            display: block;
+        }
+        
+        .add-todo-wrapper {
+            margin-top: 10px
+        }
+        
+        .todo-item {
+            width: 100%;
+            min-height: 40px;
+            height: auto;
+            background-color: #fff;
+            border: solid 1px #eee;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .todo {
+            width: 70%;
+            flex-basis: 70%;
+        }
+        
+        .todo-actions {
+            width: 30%;
+            flex-basis: 70%;
+            display: flex;
+            flex: auto;
+            color: rgba(32, 32, 31);
+        }
+        
+        .delete {
+            background-color: red;
+            padding: 5px;
+            color: #fff;
+            border: none;
+        }
+        
+        .complete {
+            background-color: rgb(53, 53, 143);
+            color: #fff;
+            border: none;
+            outline: none;
+            padding: 5px;
+        }
+        
+        .completed {
+            text-decoration: line-through;
+        }
+        
+        .new-todo-input {
+            width: 70%;
+            height: 40px;
+            padding: 5px;
+        }
+        
+        .add-todo-btn {
+            max-width: 20%;
+            padding: 5px;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="target">
+        <ul class="todo-wrapper" id="todo-items-wrapper"></ul>
+        <div class="add-todo-wrapper">
+            <input class="new-todo-input" id="add-todo-input" type="text" />
+            <button class="add-todo-btn" id="add-todo-button">
+                Add todo
+            </button>
+        </div>
+    </div>
+    <script src="./todos.js"></script>
+</body>
+
+</html>
