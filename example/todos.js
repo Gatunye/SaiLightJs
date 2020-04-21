@@ -7,6 +7,11 @@ setState({
   todos: [
     // {todo:  todo, completed: false}
   ],
+  students: [
+    { name: "Stacy", age: 34 },
+    { name: "Stacy", age: 34 },
+    { name: "Stacy", age: 34 },
+  ],
 });
 
 /**
@@ -57,11 +62,11 @@ const TodoComponent = () => {
  */
 view(function () {
   // we shall use this functioni to get the state stored in the global store
- const state = getState();
- var list = ""; // avariable to hold the todos after the irritating through the array
- for (var index in state.todos) {
-   var todo = state.todos[index];
-   list += `
+  const state = getState();
+  var list = ""; // avariable to hold the todos after the irritating through the array
+  for (var index in state.todos) {
+    var todo = state.todos[index];
+    list += `
      <li class="todo-item">
         <div class="todo ${todo.completed ? "completed" : ""}" >
             ${todo.todo}
@@ -78,13 +83,15 @@ view(function () {
         </div>
       </li>
     `;
- }
- if(list == '')
-  {
-    list = "<p>You dont have any todo </P>"
+  }
+  if (list == "") {
+    list = "<p>You dont have any todo </P>";
   }
   return list;
-}).point("#todo-items-wrapper").named("todo-list-view").render();
+})
+  .point("#todo-items-wrapper")
+  .named("todo-list-view")
+  .render();
 
 /**
  * Adding some action
