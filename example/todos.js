@@ -60,35 +60,7 @@ const TodoComponent = () => {
  * call the view function to render the view initally
  * at the call of this function the view will be stored inside
  */
-view(function () {
-  // we shall use this functioni to get the state stored in the global store
-  const state = getState();
-  var list = ""; // avariable to hold the todos after the irritating through the array
-  for (var index in state.todos) {
-    var todo = state.todos[index];
-    list += `
-     <li class="todo-item">
-        <div class="todo ${todo.completed ? "completed" : ""}" >
-            ${todo.todo}
-        </div>
-        <div class="todo-actions">
-          <div>
-            <button type="button" onClick="deleteTodo(${index})" class="delete">
-                Delete
-            </button>
-            <button type="button" class="complete" onClick="markTodoComplete(${index})">
-                ${todo.completed ? "Mark Incomplete" : "Mark Compelete"}"
-            </button>
-          </div>
-        </div>
-      </li>
-    `;
-  }
-  if (list == "") {
-    list = "<p>You dont have any todo </P>";
-  }
-  return list;
-})
+view(TodoComponent)
   .point("#todo-items-wrapper")
   .named("todo-list-view")
   .render();
