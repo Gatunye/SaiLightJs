@@ -1,0 +1,11 @@
+.add-section {
+    border: dotted 2px #444;
+    min-height: 100px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.add-section:hover {
+    transform: scale(0.9);
+    transition: 0.3s ease;
+}
